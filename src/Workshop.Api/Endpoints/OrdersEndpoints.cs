@@ -20,9 +20,6 @@ public static class OrdersEndpoints
         }).WithName("GetOrder");
 
         // EXERCISE 1: this POST handler has no validation.
-        // It will accept negative prices, zero quantities, empty product names, and
-        // unknown user IDs. Add a FluentValidation validator (see CreateUserRequestValidator
-        // for the pattern) and wire it in like UsersEndpoints does.
         group.MapPost("/", (CreateOrderRequest request, IOrderRepository repo) =>
         {
             var order = new Order(Guid.NewGuid(), request.UserId, request.Product, request.Quantity, request.Price);
