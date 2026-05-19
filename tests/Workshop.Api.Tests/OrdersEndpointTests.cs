@@ -32,8 +32,7 @@ public sealed class OrdersEndpointTests : IClassFixture<WebApplicationFactory<Pr
         Assert.Equal(HttpStatusCode.Created, response.StatusCode);
     }
 
-    // EXERCISE 1: remove Skip after adding CreateOrderRequestValidator. The endpoint must
-    // reject negative prices, zero or negative quantities, and empty product names with 400.
+    // EXERCISE 1: remove Skip after adding CreateOrderRequestValidator. 
     [Fact(Skip = "Exercise 1: implement CreateOrderRequest validation")]
     public async Task Post_orders_with_negative_price_returns_validation_problem()
     {
